@@ -1,0 +1,6 @@
+language: node_js
+node_js:
+  - "0.10"
+deploy:
+  provider: heroku
+  api_key: "88031f2c-dbe4-4a52-b4e8-69f96803fa7b"
