@@ -66,11 +66,17 @@ $(function() {
 			</div>
 			<a href="#" data-role="button" data-inset="true" class="menu-item" id="btn1"><img src="/images/camera01.fw.png" id="btn1"><span>Take a Photo<span></a>
 			<a href="#" data-role="button" data-inset="true" class="menu-item"><img src="/images/gallery01.fw.png"><span>Photo Gallery<span></a>
-			<input id="photoup" type="file" accept="image/*;capture=camera" class="hidden-upload-button" data-role="none">
+
+			<form id="photoForm" action="/fileupload" method="POST" enctype="multipart/form-data" data-ajax="false">
+				<input id="photoup" name="photoup" type="file" accept="image/*;capture=camera" class="hidden-upload-button" data-role="none">
+			</form>
 			<script type="text/javascript">
 				$('#btn1').click(function() {
 					$('#photoup').click();
-				})
+				});
+				$('#photoup').change(function() {
+					$('#photoForm').submit();
+				});
 			</script>
 		</div>
 	</div>
