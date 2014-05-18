@@ -1,6 +1,77 @@
 <head>
-	<title>Mockup 01</title>
+<title>Mockup 01</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,800' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="themes/white01.min.css" />
+<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile.structure-1.4.2.min.css" />
+
+<style type="text/css">
+	body {
+		font-family: 'Open Sans', sans-serif;
+		font-weight: 300;
+	}
+	.menu-item {
+		height: 50px;
+		line-height: 50px;
+	}
+	.menu-item span {
+		float: left;
+		margin-left: 15px;
+		font-size: 18pt;
+	}
+	.menu-item img {
+		float: left;
+		vertical-align: middle;
+	}
+	#banner {
+		margin-bottom: 25px;
+	}
+	#banner img {
+		vertical-align: middle;
+		top: -15px;
+	}
+	#banner span {
+		font-size: 24pt;
+		font-weight: 600;
+		position: relative;
+		top: 5px;
+	}
+	#spSelfie {
+		color: #26BDCF;
+	}
+	#spQuest {
+		color: #EF5BA1;
+	}
+	#photoup {
+		height: 0px;
+		width: 0px;
+		visibility: hidden;
+	}
+</style>
+<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	$( ".selector" ).on( "pagecontainercreate", function( event, ui ) {} );
+});
+</script>
 </head>
 <body>
-<h1>Mockup 01</h1>
+	<div data-role="page" id="home">
+		<div data-role="main" class="ui-content">
+			<div id="banner">
+				<img width="30%" src="/images/logo03.fw.png">
+				<span id="spSelfie">Selfie</span>&nbsp;<span id="spQuest">Quest</span>
+			</div>
+			<a href="#" data-role="button" data-inset="true" class="menu-item" id="btn1"><img src="/images/camera01.fw.png" id="btn1"><span>Take a Photo<span></a>
+			<a href="#" data-role="button" data-inset="true" class="menu-item"><img src="/images/gallery01.fw.png"><span>Photo Gallery<span></a>
+			<input id="photoup" type="file" accept="image/*;capture=camera" class="hidden-upload-button" data-role="none">
+			<script type="text/javascript">
+				$('#btn1').click(function() {
+					$('#photoup').click();
+				})
+			</script>
+		</div>
+	</div>
 </body>
